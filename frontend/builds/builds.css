@@ -1,0 +1,53 @@
+@font-face {
+    font-family: Berkahi Blackletter;
+    src: url(../../font/Berkahi\ Blackletter.otf);
+}
+@font-face {
+    font-family: Ring;
+    src: url(../../font/RingbearerMedium-51mgZ.ttf);
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #353030;
+}
+.container_header{
+    width: 100%;
+    height: 10vh;
+    background-color: #353030;
+}
+header{
+    display: flex;
+    width: 90%;
+    height: 100%;
+    margin: auto;
+    color: rgb(225,225,225);
+    text-decoration: none;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+header nav ul{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    
+}
+header nav ul a{
+    display: flex;
+    color: rgb(225,225,225);
+    padding: 10px;
+    text-decoration: none;
+    font-size: 25px;
+}
+header p {
+    font-family: Berkahi Blackletter;
+    font-size: 6vh;
+    margin: 0%;
+    padding: 0%;
+}
+
+.now {
+    color: #FFC857;
+    font-weight: bold;
+}

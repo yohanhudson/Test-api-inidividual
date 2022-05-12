@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Surtr-Cadastrar</title>
+    <link rel="stylesheet" href="./Cadastro_style.css" />
+    <script src="../js/funcoes.js"></script>
+  </head>
+  <link
+    rel="shortcut icon"
+    type="imagex/png"
+    href="../../img/deenbeg-3775233d-3451-4574-985a-39fca6594936-_1_.ico"
+  />
+
+  <body>
+    <header>
+      <p>SURTR</p>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="../sobre/sobre.html">Sobre</a></li>
+          <li><a href="../builds/builds.html">Builds</a></li>
+          <li><a href="../Forum/forun.html">Fórum</a></li>
+          <li><a class="now" href="cadastro.html">Cadastrar</a></li>
+          <li><a href="../login/login.html">Login</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="banner">
+      <div class="container">
+        <div class="titulo">
+          <p>Deseja começar essa aventura?</p>
+          <div class="lista">
+            <label for="ipt_Nome">Nome:</label>
+            <input id="ipt_Nome" type="text" placeholder="username" />
+
+            <label for="ipt_Email">Email:</label>
+            <input
+              id="ipt_Email"
+              type="text"
+              placeholder="seuemail@gmail.com"
+            />
+
+            <label for="ipt_Plataforma">Plataforma:</label>
+            <input
+              id="ipt_Plataforma"
+              type="text"
+              placeholder="XBOX/Playstation/PC"
+            />
+
+            <label for="ipt_Senha">Senha:</label>
+            <input id="ipt_Senha" type="password" placeholder="password" />
+
+            <label for="ipt_Confirma_Senha">Confirma Senha:</label>
+            <input
+              id="ipt_Confirma_Senha"
+              type="password"
+              placeholder="password"
+            />
+
+            <button class="btn" onclick="cadastrar()">Cadastrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="container2">
+        <h4>
+          Todos os direitos autorais revervados para Yohan Hudson - SPtech
+          &copy; 2022
+        </h4>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+  function cadastrar() {
+    const nome = ipt_Nome.value;
+    const email = ipt_Email.value;
+    const plataforma = ipt_Plataforma.value;
+    const senha = ipt_Senha.value;
+    const c_senha = ipt_Confirma_Senha.value;
+
+    fetch("http://localhost:3333/usuario/creating", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        nomeServer: nome,
+        emailServer: email,
+        PlataformaServe: plataforma,
+        senhaServer: senha,
+      }),
+    }).then((response) => {
+      response.json().then((data) => {
+        console.log(data);
+        // Mostrar alerta
+      });
+    });
+  }
+</script>
